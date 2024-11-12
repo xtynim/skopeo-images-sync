@@ -6,6 +6,7 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin; export PATH
 
 IMAGES_FILE=$1
 IMAGES_REPO=$2
+IMAGES_MULTIPATHS=$3
 SKOPEO_USERNAME=${USERNAME}
 SKOPEO_PASSWORD=${PASSWORD}
 SKOPEO_AUTHFILE=${AUTHFILE:-'./containers/auth.json'}
@@ -70,6 +71,32 @@ getTag()
     echo $tags
 }
 
+skopeoCopy()
+## 同步镜像到目标仓库，参数：注册表名称, 仓库名称, 镜像Tag，目标仓库地址，多路径处理
+{
+    local REGISTRY=$1
+    local REPOSITORY=$2
+    local TAG=$3
+    local IMAGES_REPO=$4
+    local IMAGES_MULTIPATHS=$5
+
+    if [ ! "$(getSyncStatus ${REGISTRY} ${REPOSITORY} ${TAG})" ]; then
+        echo "+ skopeo copy docker://${REGISTRY}/${REPOSITORY}:${tag} docker://${IMAGES_REPO}/${REPOSITORY}:${TAG}"
+        if [ "${IMAGES_MULTIPATHS^^}X" == "REPLACEX" ]; then
+            echo "  => ${IMAGES_REPO}/${REPOSITORY//\//_}:${TAG}"
+            skopeo copy --retry-times 5 docker://${REGISTRY}/${REPOSITORY}:${tag} docker://${IMAGES_REPO}/${REPOSITORY//\//_}:${TAG}
+        elif [ "${IMAGES_MULTIPATHS^^}X" == "DELETEX" ]; then
+            echo "  => ${IMAGES_REPO}/${REPOSITORY##*/}:${TAG}"
+            skopeo copy --retry-times 5 docker://${REGISTRY}/${REPOSITORY}:${tag} docker://${IMAGES_REPO}/${REPOSITORY##*/}:${TAG}
+        elif [ "${IMAGES_MULTIPATHS^^}X" == "SUFFIXX" ]; then
+            echo "  => ${IMAGES_REPO}/${REPOSITORY##*/}:${TAG}-${REPOSITORY%%/*}"
+            skopeo copy --retry-times 5 docker://${REGISTRY}/${REPOSITORY}:${tag} docker://${IMAGES_REPO}/${REPOSITORY##*/}:${TAG}-${REPOSITORY%%/*}
+        else
+            skopeo copy --retry-times 5 docker://${REGISTRY}/${REPOSITORY}:${tag} docker://${IMAGES_REPO}/${REPOSITORY}:${TAG}
+        fi
+        updateSyncStatus ${REGISTRY} ${REPOSITORY} ${TAG}
+    fi
+}
 
 ## Login to the Container registry
 # if [ ! -f "${SKOPEO_AUTHFILE}" ]; then
@@ -77,7 +104,7 @@ getTag()
 # fi
 
 ## Synchronize Container images
-# skopeo copy docker://docker.io/grafana/grafana:9.5.3 docker://hub.local.lan/grafana/grafana:9.5.3
+# skopeo copy docker://docker.io/bitnami/git:2.35.0 docker://hub.local.lan/repo/bitnami/git:2.35.0
 # REGISTRY=$(getRegistry)
 for reg in $(getRegistry);
 do
@@ -87,11 +114,8 @@ do
         # TAGS=$(getTag $reg $repo)
         for tag in $(getTag $reg $repo);
         do
-            if [ ! "$(getSyncStatus ${reg} ${repo} ${tag})" ]; then
-                echo "+ skopeo copy docker://${reg}/${repo}:${tag} docker://${IMAGES_REPO}/${repo}:${tag}"
-                skopeo copy --retry-times 5 docker://${reg}/${repo}:${tag} docker://${IMAGES_REPO}/${repo}:${tag}
-                updateSyncStatus ${reg} ${repo} ${tag}
-            fi
+            # skopeo copy --retry-times 5 docker://${reg}/${repo}:${tag} docker://${IMAGES_REPO}/${repo}:${tag}
+            skopeoCopy ${reg} ${repo} ${tag} ${IMAGES_REPO} ${IMAGES_MULTIPATHS}
         done
     done
 done

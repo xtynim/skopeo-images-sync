@@ -1,6 +1,6 @@
-# 同步 Rancher RKE 系统镜像
+# Skopeo sync 同步镜像到公共仓库
 
-name: Synchronize images - Rancher
+name: Synchronize images - Sync
 
 on:
   workflow_dispatch:
@@ -9,14 +9,14 @@ on:
       - 'main'
       - 'release'
     paths:
-      - 'images/rancher.yaml'
+      - 'images/images00.yaml'
 
 env:
   REGISTRY: "${{ vars.PUBLIC_CR_REGISTRY }}"
   REPOSITORY: "${{ vars.PUBLIC_CR_REPOSITORY }}"
   USERNAME: "${{ secrets.PUBLIC_CR_USERNAME }}"
   PASSWORD: "${{ secrets.PUBLIC_CR_PASSWORD }}"
-  ACTIONSFILE: .github/workflows/rancher.yaml
+  ACTIONSFILE: .github/workflows/skopeo-sync.yaml
 
 jobs:
   skopeo-sync-images:

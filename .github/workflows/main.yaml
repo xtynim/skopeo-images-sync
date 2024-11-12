@@ -5,9 +5,24 @@ name: Synchronize images
 on:
   workflow_dispatch:
     inputs:
-      label:
-        description: 'skopeo'
-        required: false
+      command:
+        description: 'Skopeo Command'
+        required: true
+        default: 'copy'
+        type: choice
+        options:
+          - sync
+          - copy
+      multipaths:
+        description: 'Repository multi-level paths config for Skopeo copy'
+        required: true
+        default: 'unchange'
+        type: choice
+        options:
+          - delete
+          - suffix
+          - replace
+          - unchange
   push:
     branches: 
       - 'main'
@@ -17,15 +32,16 @@ on:
       - 'images/docker.yaml'
 
 env:
-  REGISTRY: "${{ vars.HARBOR_REGISTRY }}"
-  REPOSITORY: "${{ vars.HARBOR_REPOSITORY }}"
-  USERNAME: "${{ secrets.HARBOR_USERNAME }}"
-  PASSWORD: "${{ secrets.HARBOR_PASSWORD }}"
-  IMAGEFILE: images/images.yaml
+  REGISTRY: "${{ vars.SKOPEO_CR_REGISTRY }}"
+  REPOSITORY: "${{ vars.SKOPEO_CR_REPOSITORY }}"
+  USERNAME: "${{ secrets.SKOPEO_CR_USERNAME }}"
+  PASSWORD: "${{ secrets.SKOPEO_CR_PASSWORD }}"
+  COMMAND: "${{ vars.SKOPEO_DEFAULT_COMMAND }}"
+  MULTIPATHS: "${{ vars.SKOPEO_REPOSITORY_MULTILEVEL }}"
   ACTIONSFILE: .github/workflows/main.yaml
 
 jobs:
-  skopeo-copy-images:
+  skopeo-synchronize-images:
     runs-on: ubuntu-latest
     timeout-minutes: 1200
     permissions:
@@ -40,14 +56,31 @@ jobs:
       - name: Login to the Container registry
         run: echo "${{ env.PASSWORD }}" | skopeo login -u "${{ env.USERNAME }}" --password-stdin ${{ env.REGISTRY }}
 
+      - name: Set Skopeo Command Environment variables
+        if: ${{ inputs.command }}
+        run: |
+          echo "COMMAND=${{ inputs.command }}" >>"$GITHUB_ENV"
+          echo "MULTIPATHS=${{ inputs.multipaths }}" >>"$GITHUB_ENV"
+
       - name: Synchronize Container images To ${{ env.REGISTRY }}
-        # run: skopeo copy docker://docker.io/grafana/grafana:9.5.3 docker://${{ env.REGISTRY }}/${{ env.REPOSITORY }}/grafana/grafana:9.5.3
+        if: ${{ env.COMMAND == 'copy' }}
+        # run: skopeo copy docker://docker.io/bitnami/git:2.35.0 docker://${{ env.REGISTRY }}/${{ env.REPOSITORY }}/bitnami/git:2.35.0
         run: |
           chmod +x .github/tools/skopeo-copy.sh
-          for f in $(yq '.on.push.paths' "${{ env.ACTIONSFILE }}" | awk '{print $2}'); \
-            do eval test -f ${f} && eval .github/tools/skopeo-copy.sh ${f} "${{ env.REGISTRY }}/${{ env.REPOSITORY }}"; done
+          for f in $(yq '.on.push.paths[]' "${{ env.ACTIONSFILE }}"); \
+            do eval test -f ${f} && eval .github/tools/skopeo-copy.sh "${f}" "${{ env.REGISTRY }}/${{ env.REPOSITORY }}" "${{ env.MULTIPATHS }}"; done
+
+      - name: Synchronize Container images To ${{ env.REGISTRY }}
+        if: ${{ env.COMMAND == 'sync' }}
+        # run: skopeo sync --keep-going --src yaml --dest docker images.yaml ${{ env.REGISTRY }}/${{ env.REPOSITORY }}/
+        run: |
+          for f in $(yq '.on.push.paths[]' "${{ env.ACTIONSFILE }}"); \
+            do docker run --rm -v ./${f}:/${f} quay.io/skopeo/stable:latest \
+              sync --retry-times 5 --dest-username="${{ env.USERNAME }}" --dest-password="${{ env.PASSWORD }}" \
+              --keep-going --src yaml --dest docker /${f} ${{ env.REGISTRY }}/${{ env.REPOSITORY }}/ ; done
 
       - name: Commit Synchronize Status
+        if: ${{ env.COMMAND == 'copy' }}
         uses: EndBug/add-and-commit@v9
         with:
           author_name: Github Actions
