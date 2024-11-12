@@ -55,6 +55,23 @@ docker.io:
       - "1.28"
     easysoft/zentao:
       - latest
+    golang:
+      - 1.16.15
+      - 1.16.15-alpine3.15
+      - 1.17.13
+      - 1.17.13-alpine3.16
+      - 1.18.10
+      - 1.18.10-alpine3.17
+      - 1.19.13
+      - 1.19.13-alpine3.18
+      - 1.20.14
+      - 1.20.14-alpine3.19
+      - 1.21.13
+      - 1.21.13-alpine3.20
+      - 1.22.9
+      - 1.22.9-alpine3.20
+      - 1.23.3
+      - 1.23.3-alpine3.20
     grafana/grafana:
       - 9.5.20
       - 9.5.21
@@ -180,4 +197,4 @@ docker.io:
       - v4.0.2
     zlmediakit/zlmediakit:
       - master
-  updated: 2024-11-12T09:11:32Z
+  updated: 2024-11-12T09:33:37Z
