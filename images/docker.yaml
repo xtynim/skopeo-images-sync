@@ -80,6 +80,7 @@ docker.io:
       - latest
     grafana/grafana:
       - 9.5.20
+      - 9.5.21
     jenkins/inbound-agent:
       - latest
       - latest-alpine
