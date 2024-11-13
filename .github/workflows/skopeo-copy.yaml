@@ -17,7 +17,6 @@ env:
   REPOSITORY: "${{ vars.HARBOR_REPOSITORY }}"
   USERNAME: "${{ secrets.HARBOR_USERNAME }}"
   PASSWORD: "${{ secrets.HARBOR_PASSWORD }}"
-  ACTIONSFILE: .github/workflows/skopeo-copy.yaml
 
 jobs:
   skopeo-copy-images:
@@ -39,7 +38,8 @@ jobs:
         # run: skopeo copy docker://docker.io/bitnami/git:2.35.0 docker://${{ env.REGISTRY }}/${{ env.REPOSITORY }}/bitnami/git:2.35.0
         run: |
           chmod +x .github/tools/skopeo-copy.sh
-          for f in $(yq '.on.push.paths[]' "${{ env.ACTIONSFILE }}"); \
+          export ACTIONSFILE=$(echo ${{ github.workflow_ref }} | sed 's,.*\(\.github/workflows/.*\)@.*,\1,')
+          for f in $(yq '.on.push.paths[]' "${ACTIONSFILE}"); \
             do eval test -f ${f} && eval .github/tools/skopeo-copy.sh "${f}" "${{ env.REGISTRY }}/${{ env.REPOSITORY }}"; done
 
       - name: Commit Synchronize Status

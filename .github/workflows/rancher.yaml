@@ -16,7 +16,6 @@ env:
   REPOSITORY: "${{ vars.PUBLIC_CR_REPOSITORY }}"
   USERNAME: "${{ secrets.PUBLIC_CR_USERNAME }}"
   PASSWORD: "${{ secrets.PUBLIC_CR_PASSWORD }}"
-  ACTIONSFILE: .github/workflows/rancher.yaml
 
 jobs:
   skopeo-sync-images:
@@ -37,7 +36,8 @@ jobs:
       - name: Synchronize Container images To ${{ env.REGISTRY }}
         # run: skopeo sync --keep-going --src yaml --dest docker images.yaml ${{ env.REGISTRY }}/${{ env.REPOSITORY }}/
         run: |
-          for f in $(yq '.on.push.paths[]' "${{ env.ACTIONSFILE }}"); \
+          export ACTIONSFILE=$(echo ${{ github.workflow_ref }} | sed 's,.*\(\.github/workflows/.*\)@.*,\1,')
+          for f in $(yq '.on.push.paths[]' "${ACTIONSFILE}"); \
             do docker run --rm -v ./${f}:/${f} quay.io/skopeo/stable:latest \
               sync --retry-times 5 --dest-username="${{ env.USERNAME }}" --dest-password="${{ env.PASSWORD }}" \
               --keep-going --src yaml --dest docker /${f} ${{ env.REGISTRY }}/${{ env.REPOSITORY }}/ ; done

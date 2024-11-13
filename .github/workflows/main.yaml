@@ -38,7 +38,6 @@ env:
   PASSWORD: "${{ secrets.SKOPEO_CR_PASSWORD }}"
   COMMAND: "${{ vars.SKOPEO_DEFAULT_COMMAND }}"
   MULTIPATHS: "${{ vars.SKOPEO_REPOSITORY_MULTILEVEL }}"
-  ACTIONSFILE: .github/workflows/main.yaml
 
 jobs:
   skopeo-synchronize-images:
@@ -67,14 +66,16 @@ jobs:
         # run: skopeo copy docker://docker.io/bitnami/git:2.35.0 docker://${{ env.REGISTRY }}/${{ env.REPOSITORY }}/bitnami/git:2.35.0
         run: |
           chmod +x .github/tools/skopeo-copy.sh
-          for f in $(yq '.on.push.paths[]' "${{ env.ACTIONSFILE }}"); \
+          export ACTIONSFILE=$(echo ${{ github.workflow_ref }} | sed 's,.*\(\.github/workflows/.*\)@.*,\1,')
+          for f in $(yq '.on.push.paths[]' "${ACTIONSFILE}"); \
             do eval test -f ${f} && eval .github/tools/skopeo-copy.sh "${f}" "${{ env.REGISTRY }}/${{ env.REPOSITORY }}" "${{ env.MULTIPATHS }}"; done
 
       - name: Synchronize Container images To ${{ env.REGISTRY }}
         if: ${{ env.COMMAND == 'sync' }}
         # run: skopeo sync --keep-going --src yaml --dest docker images.yaml ${{ env.REGISTRY }}/${{ env.REPOSITORY }}/
         run: |
-          for f in $(yq '.on.push.paths[]' "${{ env.ACTIONSFILE }}"); \
+          export ACTIONSFILE=$(echo ${{ github.workflow_ref }} | sed 's,.*\(\.github/workflows/.*\)@.*,\1,')
+          for f in $(yq '.on.push.paths[]' "${ACTIONSFILE}"); \
             do docker run --rm -v ./${f}:/${f} quay.io/skopeo/stable:latest \
               sync --retry-times 5 --dest-username="${{ env.USERNAME }}" --dest-password="${{ env.PASSWORD }}" \
               --keep-going --src yaml --dest docker /${f} ${{ env.REGISTRY }}/${{ env.REPOSITORY }}/ ; done
