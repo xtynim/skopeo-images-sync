@@ -1,0 +1,61 @@
+# 同步镜像到阿里云个人仓库：registry.cn-hangzhou.aliyuncs.com/xtynim
+
+name: Synchronize images - AL.ACR
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+      - 'release'
+    paths:
+      - 'images/acr.yaml'
+
+env:
+  REGISTRY: "${{ vars.AL_CR_REGISTRY }}"
+  REPOSITORY: "${{ vars.AL_CR_REPOSITORY }}"
+  USERNAME: "${{ secrets.AL_CR_USERNAME }}"
+  PASSWORD: "${{ secrets.AL_CR_PASSWORD }}"
+  COMMAND: "copy"          # "${{ vars.SKOPEO_DEFAULT_COMMAND }}"
+  MULTIPATHS: "replace"    # "${{ vars.SKOPEO_REPOSITORY_MULTILEVEL }}"
+
+jobs:
+  skopeo-synchronize-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1200
+    permissions:
+      contents: write
+      packages: write
+      attestations: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Login to the Container registry
+        run: echo "${{ env.PASSWORD }}" | skopeo login -u "${{ env.USERNAME }}" --password-stdin ${{ env.REGISTRY }}
+
+      - name: Set Skopeo Command Environment variables
+        if: ${{ inputs.command }}
+        run: |
+          echo "COMMAND=${{ inputs.command }}" >>"$GITHUB_ENV"
+          echo "MULTIPATHS=${{ inputs.multipaths }}" >>"$GITHUB_ENV"
+
+      - name: Synchronize Container images To ${{ env.REGISTRY }}
+        if: ${{ env.COMMAND == 'copy' }}
+        # run: skopeo copy docker://docker.io/bitnami/git:2.35.0 docker://${{ env.REGISTRY }}/${{ env.REPOSITORY }}/bitnami/git:2.35.0
+        run: |
+          chmod +x .github/tools/skopeo-copy.sh
+          export ACTIONSFILE=$(echo ${{ github.workflow_ref }} | sed 's,.*\(\.github/workflows/.*\)@.*,\1,')
+          for f in $(yq '.on.push.paths[]' "${ACTIONSFILE}"); \
+            do eval test -f ${f} && eval .github/tools/skopeo-copy.sh "${f}" "${{ env.REGISTRY }}/${{ env.REPOSITORY }}" "${{ env.MULTIPATHS }}"; done
+
+      - name: Commit Synchronize Status
+        if: ${{ env.COMMAND == 'copy' }}
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: Github Actions
+          author_email: mail@example.com
+          message: 'Add by Github Actions'
+          add: '*.sync --force'
+          cwd: './images/'
