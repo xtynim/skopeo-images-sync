@@ -63,14 +63,16 @@ docker.io:
     bitnami/mongodb:
       - 4.2.15-debian-10-r31
     bitnami/mysql:
+      - 8.0.39
+      - 8.0.26
       - 8.0.26-debian-10-r60
     bitnami/nats:
       - 2.6.0-debian-10-r0
       - 2.6.4-debian-10-r0
     bitnami/redis:
-      - 5.0.14-debian-10-r6
-      - 6.2.14
       - 6.2.16
+      - 6.2.14
+      - 5.0.14-debian-10-r6
     bitnami/sonarqube:
       - latest
       - 10.2.1-debian-11-r0
@@ -78,6 +80,8 @@ docker.io:
       - 1.28
     easysoft/zentao:
       - latest
+      - 21.1
+      - 20.8
     gogs/gogs:
       - latest
     jenkins/inbound-agent:
