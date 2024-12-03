@@ -1,0 +1,121 @@
+# 已同步镜像列表
+docker.io:
+  images:
+    adolfintel/speedtest:
+      - latest
+    alpine:
+      - 3.18.6
+      - 3.19.0
+      - 3.20.0
+      - latest
+    bitnami/git:
+      - 2.35.0
+      - 2.43.2
+      - 2.44.0
+      - 2.45.2
+      - latest
+    bitnami/kafka:
+      - 3.8.0-debian-12-r3
+    bitnami/minio:
+      - 2022.10.15-debian-11-r0
+      - 2023.12.23-debian-11-r3
+    bitnami/mongodb:
+      - 4.2.15-debian-10-r31
+    bitnami/mysql:
+      - 8.0.26
+      - 8.0.26-debian-10-r60
+      - 8.0.39
+    bitnami/nats:
+      - 2.6.0-debian-10-r0
+      - 2.6.4-debian-10-r0
+    bitnami/redis:
+      - 5.0.14-debian-10-r6
+      - 6.2.14
+      - 6.2.16
+    bitnami/sonarqube:
+      - 10.2.1-debian-11-r0
+      - latest
+    busybox:
+      - "1.28"
+    easysoft/zentao:
+      - "20.8"
+      - "21.1"
+      - latest
+    gogs/gogs:
+      - latest
+    golang:
+      - 1.16.15
+      - 1.16.15-alpine3.15
+      - 1.17.13
+      - 1.17.13-alpine3.16
+      - 1.18.10
+      - 1.18.10-alpine3.17
+      - 1.19.13
+      - 1.19.13-alpine3.18
+      - 1.20.14
+      - 1.20.14-alpine3.19
+      - 1.21.13
+      - 1.21.13-alpine3.20
+      - 1.22.9
+      - 1.22.9-alpine3.20
+      - 1.23.3
+      - 1.23.3-alpine3.20
+    jenkins/inbound-agent:
+      - 3206.vb_15dcf73f6a_9-2
+      - latest
+      - latest-alpine
+      - latest-jdk17
+    jenkins/jenkins:
+      - 2.440.3-jdk17
+      - 2.452.2-jdk17
+      - 2.462.3-jdk17
+      - 2.479.2-jdk17
+      - latest
+    minio/mc:
+      - RELEASE.2023-08-30T08-02-26Z
+    minio/minio:
+      - RELEASE.2021-07-30T00-02-00Z
+      - RELEASE.2023-12-23T07-19-11Z
+    neilpang/acme.sh:
+      - latest
+    nginx:
+      - 1.22.0
+      - 1.24.0
+      - 1.26.0
+      - latest
+    node:
+      - 18.20.3
+      - 20.14.0
+      - 20.14.0-alpine
+      - 20.15.0
+      - 20.15.0-alpine
+      - latest
+    obsidiandynamics/kafdrop:
+      - 4.0.2
+    selectdb/doris.be-ubuntu:
+      - 2.1.6
+    selectdb/doris.fe-ubuntu:
+      - 2.1.6
+    snowdreamtech/frpc:
+      - 0.45.0
+      - 0.61.0
+    snowdreamtech/frps:
+      - 0.45.0
+      - 0.61.0
+    ubuntu:
+      - "16.04"
+      - "16.10"
+      - "18.04"
+      - "18.10"
+      - "20.04"
+      - "20.10"
+      - "22.04"
+      - "22.10"
+      - "24.04"
+      - "24.10"
+  updated: 2024-12-03T08:32:43Z
+container-registry.oracle.com:
+  images:
+    mysql/community-server:
+      - 8.0.26
+  updated: 2024-12-03T08:32:50Z
