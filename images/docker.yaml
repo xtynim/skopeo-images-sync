@@ -66,6 +66,10 @@ docker.io:
       - 2023.12.23-debian-11-r3
     bitnami/mongodb:
       - 4.2.15-debian-10-r31
+    bitnami/mongodb-exporter:
+      - 0.11.2-debian-10-r236
+    korenlev/k8s-mongo-labeler-sidecar:
+      - latest
     bitnami/mysql:
       - 8.0.26-debian-10-r60
     bitnami/mysqld-exporter:
