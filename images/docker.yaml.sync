@@ -26,6 +26,8 @@ docker.io:
       - 2023.12.23-debian-11-r3
     bitnami/mongodb:
       - 4.2.15-debian-10-r31
+    bitnami/mongodb-exporter:
+      - 0.11.2-debian-10-r236
     bitnami/mysql:
       - 8.0.26-debian-10-r60
     bitnami/mysqld-exporter:
@@ -83,6 +85,8 @@ docker.io:
     jenkins/jenkins:
       - 2.440.3-jdk17
       - 2.452.2-jdk17
+      - latest
+    korenlev/k8s-mongo-labeler-sidecar:
       - latest
     longhornio/csi-attacher:
       - v3.4.0
@@ -197,4 +201,4 @@ docker.io:
       - v4.0.2
     zlmediakit/zlmediakit:
       - master
-  updated: 2024-11-12T09:33:37Z
+  updated: 2024-12-17T02:40:03Z
