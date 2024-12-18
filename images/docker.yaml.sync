@@ -29,7 +29,10 @@ docker.io:
     bitnami/mongodb-exporter:
       - 0.11.2-debian-10-r236
     bitnami/mysql:
+      - 8.0.26
       - 8.0.26-debian-10-r60
+      - 8.0.27
+      - 8.0.39
     bitnami/mysqld-exporter:
       - 0.13.0-debian-10-r105
     bitnami/nats:
@@ -201,4 +204,4 @@ docker.io:
       - v4.0.2
     zlmediakit/zlmediakit:
       - master
-  updated: 2024-12-17T02:40:03Z
+  updated: 2024-12-18T09:37:49Z
