@@ -30,3 +30,11 @@ ghcr.io:
       - '-'
       - v1.0.0
   updated: 2024-09-10T01:42:29Z
+container-registry.oracle.com:
+  images:
+    mysql/community-server:
+      - '-'
+      - 8.0.26
+      - 8.0.27
+      - 8.0.39
+  updated: 2024-12-18T09:41:32Z
