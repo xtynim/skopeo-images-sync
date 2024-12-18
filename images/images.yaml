@@ -9,6 +9,13 @@ quay.io:
       - v1.5.0
       - v1.7.0
 
+ghcr.io:
+  tls-verify: false
+  images:
+    kafbat/kafka-ui:
+      # - latest
+      - v1.0.0
+      
 cr.fluentbit.io:
   tls-verify: false
   images:
@@ -27,9 +34,11 @@ skywalking.docker.scarf.sh:
       - 9.1.0
       - 9.7.0
 
-ghcr.io:
+container-registry.oracle.com:
   tls-verify: false
   images:
-    kafbat/kafka-ui:
+    mysql/community-server:
       # - latest
-      - v1.0.0
+      - 8.0.39
+      - 8.0.27
+      - 8.0.26
