@@ -109,6 +109,11 @@ docker.io:
       - v1.3.3
     longhornio/longhorn-ui:
       - v1.3.3
+    maven:
+      - 3-eclipse-temurin-11
+      - 3-eclipse-temurin-17
+      - 3-eclipse-temurin-21
+      - 3-eclipse-temurin-8
     minio/mc:
       - RELEASE.2023-08-30T08-02-26Z
       - latest
@@ -120,6 +125,7 @@ docker.io:
       - 1.26.0
       - latest
     node:
+      - 16.13.0
       - 18.20.3
       - 20.14.0
       - 20.14.0-alpine
@@ -204,4 +210,4 @@ docker.io:
       - v4.0.2
     zlmediakit/zlmediakit:
       - master
-  updated: 2024-12-18T09:37:49Z
+  updated: 2025-01-02T01:41:08Z
