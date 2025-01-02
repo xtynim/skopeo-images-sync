@@ -71,6 +71,11 @@ docker.io:
       - 2.462.3-jdk17
       - 2.479.2-jdk17
       - latest
+    maven:
+      - 3-eclipse-temurin-11
+      - 3-eclipse-temurin-17
+      - 3-eclipse-temurin-21
+      - 3-eclipse-temurin-8
     minio/mc:
       - RELEASE.2023-08-30T08-02-26Z
     minio/minio:
@@ -84,6 +89,7 @@ docker.io:
       - 1.26.0
       - latest
     node:
+      - 16.13.0
       - 18.20.3
       - 20.14.0
       - 20.14.0-alpine
@@ -113,7 +119,7 @@ docker.io:
       - "22.10"
       - "24.04"
       - "24.10"
-  updated: 2024-12-03T08:32:43Z
+  updated: 2025-01-02T02:26:54Z
 container-registry.oracle.com:
   images:
     mysql/community-server:
