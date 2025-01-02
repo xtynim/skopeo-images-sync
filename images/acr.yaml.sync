@@ -8,6 +8,24 @@ docker.io:
       - 3.19.0
       - 3.20.0
       - latest
+    bitnami/git:
+      - 2.45.2
+      - latest
+    bitnami/mysql:
+      - 8.0.26
+      - 8.0.39
+    bitnami/redis:
+      - 5.0.14
+      - 6.2.14
+      - 6.2.16
+    bitnami/sonarqube:
+      - 10.2.1-debian-11-r0
+      - latest
+    busybox:
+      - "1.28"
+      - latest
+    gogs/gogs:
+      - latest
     golang:
       - 1.16.15
       - 1.16.15-alpine3.15
@@ -25,6 +43,22 @@ docker.io:
       - 1.22.9-alpine3.20
       - 1.23.3
       - 1.23.3-alpine3.20
+    jenkins/inbound-agent:
+      - 3206.vb_15dcf73f6a_9-2
+      - latest
+      - latest-alpine
+      - latest-jdk17
+    jenkins/jenkins:
+      - 2.440.3-jdk17
+      - 2.452.2-jdk17
+      - 2.462.3-jdk17
+      - 2.479.2-jdk17
+      - latest
+    maven:
+      - 3-eclipse-temurin-11
+      - 3-eclipse-temurin-17
+      - 3-eclipse-temurin-21
+      - 3-eclipse-temurin-8
     neilpang/acme.sh:
       - latest
     nginx:
@@ -33,6 +67,7 @@ docker.io:
       - 1.26.0
       - latest
     node:
+      - 16.13.0
       - 18.20.3
       - 20.14.0
       - 20.14.0-alpine
@@ -56,4 +91,4 @@ docker.io:
       - "22.10"
       - "24.04"
       - "24.10"
-  updated: 2024-12-01T11:59:22Z
+  updated: 2025-01-02T02:39:25Z
