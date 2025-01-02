@@ -18,6 +18,7 @@ docker.io:
       - 20.14.0
       - 20.14.0-alpine
       - 18.20.3
+      - 16.13.0
     golang:
       - 1.23.3
       - 1.23.3-alpine3.20
@@ -132,6 +133,11 @@ docker.io:
       - v1.3.3
     longhornio/longhorn-ui:
       - v1.3.3
+    maven:
+      - 3-eclipse-temurin-8
+      - 3-eclipse-temurin-11
+      - 3-eclipse-temurin-17
+      - 3-eclipse-temurin-21
     minio/mc:
       - RELEASE.2023-08-30T08-02-26Z
     minio/minio:
