@@ -85,6 +85,10 @@ docker.io:
       - 20.8
     gogs/gogs:
       - latest
+    gitlab/gitlab-ce:
+      - 17.11.0-ce.0
+      - 16.11.10-ce.0
+      - 15.11.13-ce.0
     jenkins/inbound-agent:
       - latest
       - latest-alpine
@@ -120,6 +124,8 @@ docker.io:
     snowdreamtech/frps:
       - 0.61.0
       - 0.45.0
+    witersencom/svnadmin:
+      - 2.5.9
 
 container-registry.oracle.com:
   tls-verify: false
