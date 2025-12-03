@@ -110,6 +110,9 @@ docker.io:
       - 17.11.0-ce.0
       - 16.11.10-ce.0
       - 15.11.13-ce.0
+    glpi/glpi:
+      - 11.02
+      - 10.0.20
     jenkins/inbound-agent:
       - latest
       - latest-alpine
