@@ -60,6 +60,13 @@ docker.io:
       - "1.28"
     easysoft/zentao:
       - latest
+    gitlab/gitlab-ce:
+      - 15.11.13-ce.0
+      - 16.11.10-ce.0
+      - 17.11.0-ce.0
+    glpi/glpi:
+      - 10.0.20
+      - "11.02"
     golang:
       - 1.16.15
       - 1.16.15-alpine3.15
@@ -208,6 +215,8 @@ docker.io:
       - v1.91.3
     willdockerhub/nfs-subdir-external-provisioner:
       - v4.0.2
+    witersencom/svnadmin:
+      - 2.5.9
     zlmediakit/zlmediakit:
       - master
-  updated: 2025-01-02T01:41:08Z
+  updated: 2025-12-04T00:58:20Z
