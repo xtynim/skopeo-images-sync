@@ -72,6 +72,9 @@ docker.io:
       - 17.11.0-ce.0
       - 16.11.10-ce.0
       - 15.11.13-ce.0
+    glpi/glpi:
+      - 11.0.2
+      - 10.0.20
     jenkins/inbound-agent:
       - latest
       - latest-alpine
@@ -90,6 +93,7 @@ docker.io:
       - 3-eclipse-temurin-8
     neilpang/acme.sh:
       - latest
+      - 3.1.2
     snowdreamtech/frpc:
       - 0.61.0
       - 0.45.0
