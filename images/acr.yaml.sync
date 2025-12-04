@@ -24,6 +24,13 @@ docker.io:
     busybox:
       - "1.28"
       - latest
+    gitlab/gitlab-ce:
+      - 15.11.13-ce.0
+      - 16.11.10-ce.0
+      - 17.11.0-ce.0
+    glpi/glpi:
+      - 10.0.20
+      - 11.0.2
     gogs/gogs:
       - latest
     golang:
@@ -60,6 +67,7 @@ docker.io:
       - 3-eclipse-temurin-21
       - 3-eclipse-temurin-8
     neilpang/acme.sh:
+      - 3.1.2
       - latest
     nginx:
       - 1.22.0
@@ -91,4 +99,6 @@ docker.io:
       - "22.10"
       - "24.04"
       - "24.10"
-  updated: 2025-01-02T02:39:25Z
+    witersencom/svnadmin:
+      - 2.5.9
+  updated: 2025-12-04T03:38:08Z
