@@ -88,6 +88,10 @@ docker.io:
     snowdreamtech/frps:
       - 0.45.0
       - 0.61.0
+    sonatype/nexus3:
+      - 3.65.0
+      - 3.69.0
+      - 3.76.0
     ubuntu:
       - "16.04"
       - "16.10"
@@ -101,4 +105,4 @@ docker.io:
       - "24.10"
     witersencom/svnadmin:
       - 2.5.9
-  updated: 2025-12-04T03:38:08Z
+  updated: 2026-01-21T12:15:39Z
