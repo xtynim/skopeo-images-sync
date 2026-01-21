@@ -94,6 +94,10 @@ docker.io:
     neilpang/acme.sh:
       - latest
       - 3.1.2
+    sonatype/nexus3:
+      - 3.76.0
+      - 3.69.0
+      - 3.65.0
     snowdreamtech/frpc:
       - 0.61.0
       - 0.45.0
@@ -101,5 +105,4 @@ docker.io:
       - 0.61.0
       - 0.45.0
     witersencom/svnadmin:
-      - 2.5.9
-      
+      - 2.5.9      
