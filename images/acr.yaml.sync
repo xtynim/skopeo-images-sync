@@ -24,6 +24,13 @@ docker.io:
     busybox:
       - "1.28"
       - latest
+    gitlab/gitlab-ce:
+      - 15.11.13-ce.0
+      - 16.11.10-ce.0
+      - 17.11.0-ce.0
+    glpi/glpi:
+      - 10.0.20
+      - 11.0.2
     gogs/gogs:
       - latest
     golang:
@@ -54,12 +61,33 @@ docker.io:
       - 2.462.3-jdk17
       - 2.479.2-jdk17
       - latest
+    lmsysorg/sgl-model-gateway:
+      - latest
+      - v0.3.0
+      - v0.3.1
+      - v0.3.2
+    lmsysorg/sglang:
+      - latest
+      - latest-cu129
+      - latest-cu129-runtime
+      - latest-cu130
+      - latest-cu130-runtime
+      - latest-runtime
+      - v0.5.10
+      - v0.5.10-cu130
+      - v0.5.11
+      - v0.5.11-cu129
+      - v0.5.11-cu129-runtime
+      - v0.5.11-cu130
+      - v0.5.11-cu130-runtime
+      - v0.5.11-runtime
     maven:
       - 3-eclipse-temurin-11
       - 3-eclipse-temurin-17
       - 3-eclipse-temurin-21
       - 3-eclipse-temurin-8
     neilpang/acme.sh:
+      - 3.1.2
       - latest
     nginx:
       - 1.22.0
@@ -74,12 +102,29 @@ docker.io:
       - 20.15.0
       - 20.15.0-alpine
       - latest
+    nvidia/cuda:
+      - 11.7.1-devel-ubuntu22.04
+      - 12.9.1-base-ubuntu22.04
+      - 12.9.1-devel-ubuntu22.04
+      - 12.9.1-runtime-ubuntu24.04
+      - 13.1.2-base-rockylinux9
+      - 13.1.2-base-ubuntu24.04
+      - 13.1.2-cudnn-devel-ubuntu24.04
+      - 13.1.2-cudnn-runtime-ubuntu24.04
+      - 13.1.2-devel-rockylinux9
+      - 13.1.2-devel-ubuntu24.04
+      - 13.1.2-runtime-rockylinux9
+      - 13.1.2-runtime-ubuntu24.04
     snowdreamtech/frpc:
       - 0.45.0
       - 0.61.0
     snowdreamtech/frps:
       - 0.45.0
       - 0.61.0
+    sonatype/nexus3:
+      - 3.65.0
+      - 3.69.0
+      - 3.76.0
     ubuntu:
       - "16.04"
       - "16.10"
@@ -91,4 +136,29 @@ docker.io:
       - "22.10"
       - "24.04"
       - "24.10"
-  updated: 2025-01-02T02:39:25Z
+    vllm/vllm-openai:
+      - latest
+      - latest-cu129-ubuntu2404
+      - latest-ubuntu2404
+      - latest-x86_64-cu129-ubuntu2404
+      - latest-x86_64-ubuntu2404
+      - v0.20.2
+      - v0.20.2-cu129-ubuntu2404
+      - v0.20.2-ubuntu2404
+    vllm/vllm-openai-cpu:
+      - latest
+      - v0.20.1
+      - v0.20.2
+    witersencom/svnadmin:
+      - 2.5.9
+  updated: 2026-05-11T09:18:41Z
+ghcr.io:
+  images:
+    ggml-org/llama.cpp:
+      - full
+      - server
+      - server-b8982
+      - server-cuda
+      - server-cuda13
+      - server-cuda13-b8982
+  updated: 2026-05-11T09:19:14Z
