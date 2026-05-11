@@ -80,7 +80,8 @@ skopeoCopy()
     local IMAGES_REPO=$4
     local IMAGES_MULTIPATHS=$5
 
-    if [ ! "$(getSyncStatus ${REGISTRY} ${REPOSITORY} ${TAG})" ]; then
+    # 若 Tag 包含 latest 则强制同步，否则检查 .sync 文件状态
+    if [[ "${TAG}" == *"latest"* ]] || [ ! "$(getSyncStatus ${REGISTRY} ${REPOSITORY} ${TAG})" ]; then
         echo "+ skopeo copy docker://${REGISTRY}/${REPOSITORY}:${tag} docker://${IMAGES_REPO}/${REPOSITORY}:${TAG}"
         if [ "${IMAGES_MULTIPATHS^^}X" == "REPLACEX" ]; then
             echo "  => ${IMAGES_REPO}/${REPOSITORY//\//_}:${TAG}"
