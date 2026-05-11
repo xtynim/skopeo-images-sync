@@ -13,8 +13,15 @@ ghcr.io:
   tls-verify: false
   images:
     kafbat/kafka-ui:
-      # - latest
+      - latest
       - v1.0.0
+    ggml-org/llama.cpp:
+      - full
+      - server
+      - server-cuda
+      - server-cuda13
+      - server-b8982
+      - server-cuda13-b8982
       
 cr.fluentbit.io:
   tls-verify: false

@@ -94,6 +94,10 @@ docker.io:
     neilpang/acme.sh:
       - latest
       - 3.1.2
+    sonatype/nexus3:
+      - 3.76.0
+      - 3.69.0
+      - 3.65.0
     snowdreamtech/frpc:
       - 0.61.0
       - 0.45.0
@@ -102,4 +106,60 @@ docker.io:
       - 0.45.0
     witersencom/svnadmin:
       - 2.5.9
-      
+    lmsysorg/sglang:
+      - latest
+      - latest-cu130
+      - latest-cu129
+      - latest-runtime
+      - latest-cu130-runtime
+      - latest-cu129-runtime
+      - v0.5.11
+      - v0.5.11-cu130
+      - v0.5.11-cu129
+      - v0.5.10
+      - v0.5.10-cu130
+      - v0.5.11-runtime
+      - v0.5.11-cu130-runtime
+      - v0.5.11-cu129-runtime
+    lmsysorg/sgl-model-gateway:
+      - latest
+      - v0.3.2
+      - v0.3.1
+      - v0.3.0
+    vllm/vllm-openai:
+      - latest
+      - latest-ubuntu2404
+      - latest-x86_64-ubuntu2404
+      - latest-cu129-ubuntu2404
+      - latest-x86_64-cu129-ubuntu2404
+      - v0.20.2
+      - v0.20.2-ubuntu2404
+      - v0.20.2-cu129-ubuntu2404
+    vllm/vllm-openai-cpu:
+      - latest
+      - v0.20.2
+      - v0.20.1
+    nvidia/cuda:
+      - 13.1.2-base-ubuntu24.04
+      - 13.1.2-base-rockylinux9
+      - 13.1.2-devel-ubuntu24.04
+      - 13.1.2-devel-rockylinux9
+      - 13.1.2-runtime-ubuntu24.04
+      - 13.1.2-runtime-rockylinux9
+      - 13.1.2-cudnn-runtime-ubuntu24.04
+      - 13.1.2-cudnn-devel-ubuntu24.04
+      - 12.9.1-base-ubuntu22.04
+      - 12.9.1-devel-ubuntu22.04
+      - 12.9.1-runtime-ubuntu24.04
+      - 11.7.1-devel-ubuntu22.04
+
+ghcr.io:
+  tls-verify: false
+  images:
+    ggml-org/llama.cpp:
+      - full
+      - server
+      - server-cuda
+      - server-cuda13
+      - server-b8982
+      - server-cuda13-b8982
