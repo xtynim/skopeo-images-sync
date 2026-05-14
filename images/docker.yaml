@@ -104,9 +104,13 @@ docker.io:
     easysoft/zentao:
       - latest
     grafana/grafana:
-      - 9.5.20
+      - latest
+      - 13.0.1
+      - 12.4.3
       - 9.5.21
     gitlab/gitlab-ce:
+      - 18.10.6-ce.0
+      - 17.11.7-ce.0
       - 17.11.0-ce.0
       - 16.11.10-ce.0
       - 15.11.13-ce.0
@@ -117,6 +121,8 @@ docker.io:
       - 3206.vb_15dcf73f6a_9-2
     jenkins/jenkins:
       - latest
+      - 2.555.2-jdk21
+      - 2.541.3-jdk17
       - 2.452.2-jdk17
       - 2.440.3-jdk17
     longhornio/csi-attacher:
@@ -158,10 +164,13 @@ docker.io:
     progrium/stress:
       - latest
     prom/alertmanager:
-      - v0.25.0
+      - latest
+      - v0.32.1
       - v0.27.0
     prom/prometheus:
-      - v2.44.0
+      - latest
+      - v3.11.3
+      - v2.53.5
       - v2.50.1
     rancher/fleet-agent:
       - v0.5.3
@@ -205,11 +214,13 @@ docker.io:
     vesoft/nebula-stats-exporter:
       - v3.1.0
     victoriametrics/victoria-metrics:
-      - v1.81.1
+      - latest
+      - v1.143.0
       - v1.91.3
     willdockerhub/nfs-subdir-external-provisioner:
       - v4.0.2
     witersencom/svnadmin:
+      - 2.5.10
       - 2.5.9
     zlmediakit/zlmediakit:
       - master

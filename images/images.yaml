@@ -8,6 +8,8 @@ quay.io:
     prometheus/node-exporter:
       - v1.5.0
       - v1.7.0
+    soketi/soketi:
+      - 1.4-16-debian
 
 ghcr.io:
   tls-verify: false
@@ -22,7 +24,19 @@ ghcr.io:
       - server-cuda13
       - server-b8982
       - server-cuda13-b8982
-      
+
+us-central1-docker.pkg.dev:
+  tls-verify: false
+  images:
+    keephq/keep/keep-api:
+      - latest
+    keephq/keep/keep-ui:
+      - latest
+    keephq/keep/keep-arq-dashboard:
+      - latest
+    keephq/keep/keep-cli:
+      - latest
+
 cr.fluentbit.io:
   tls-verify: false
   images:
