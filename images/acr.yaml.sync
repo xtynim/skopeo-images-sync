@@ -24,6 +24,8 @@ docker.io:
     busybox:
       - "1.28"
       - latest
+    calciumion/new-api:
+      - latest
     gitlab/gitlab-ce:
       - 15.11.13-ce.0
       - 16.11.10-ce.0
@@ -154,10 +156,12 @@ docker.io:
       - latest
       - v0.20.1
       - v0.20.2
+    weishaw/sub2api:
+      - latest
     witersencom/svnadmin:
       - 2.5.10
       - 2.5.9
-  updated: 2026-05-18T04:05:12Z
+  updated: 2026-05-21T09:41:25Z
 ghcr.io:
   images:
     ggml-org/llama.cpp:
@@ -178,4 +182,4 @@ us-central1-docker.pkg.dev:
       - latest
     keephq/keep/keep-ui:
       - latest
-  updated: 2026-05-18T04:05:35Z
+  updated: 2026-05-21T09:42:26Z
