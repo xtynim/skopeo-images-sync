@@ -66,6 +66,8 @@ docker.io:
     busybox:
       - latest
       - 1.28
+    calciumion/new-api:
+      - latest
     gogs/gogs:
       - latest
     gitlab/gitlab-ce:
@@ -106,6 +108,8 @@ docker.io:
     snowdreamtech/frps:
       - 0.61.0
       - 0.45.0
+    weishaw/sub2api:
+      - latest
     witersencom/svnadmin:
       - 2.5.10
       - 2.5.9
