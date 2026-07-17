@@ -54,8 +54,9 @@ docker.io:
       - latest
       - 2.45.2
     bitnami/mysql:
-      - 8.0.39
+      - 8.0.46
       - 8.0.26
+      - 5.7.44
     bitnami/redis:
       - 6.2.16
       - 6.2.14
@@ -66,13 +67,10 @@ docker.io:
     busybox:
       - latest
       - 1.28
-    calciumion/new-api:
-      - latest
     gogs/gogs:
       - latest
     gitlab/gitlab-ce:
-      - 18.10.6-ce.0
-      - 17.11.7-ce.0
+      - 17.11.0-ce.0
       - 16.11.10-ce.0
       - 15.11.13-ce.0
     glpi/glpi:
@@ -85,8 +83,8 @@ docker.io:
       - 3206.vb_15dcf73f6a_9-2
     jenkins/jenkins:
       - latest
-      - 2.555.2-jdk21
-      - 2.541.3-jdk17
+      - 2.479.2-jdk17
+      - 2.462.3-jdk17
       - 2.452.2-jdk17
       - 2.440.3-jdk17
     maven:
@@ -96,7 +94,6 @@ docker.io:
       - 3-eclipse-temurin-8
     neilpang/acme.sh:
       - latest
-      - 3.1.3
       - 3.1.2
     sonatype/nexus3:
       - 3.76.0
@@ -108,10 +105,7 @@ docker.io:
     snowdreamtech/frps:
       - 0.61.0
       - 0.45.0
-    weishaw/sub2api:
-      - latest
     witersencom/svnadmin:
-      - 2.5.10
       - 2.5.9
     lmsysorg/sglang:
       - latest
@@ -170,6 +164,15 @@ ghcr.io:
       - server-cuda13
       - server-b8982
       - server-cuda13-b8982
+
+container-registry.oracle.com:
+  tls-verify: false
+  images:
+    mysql/community-server:
+      - 9.7.1
+      - 8.4.10
+      - 8.0.46
+      - 8.0.26
 
 us-central1-docker.pkg.dev:
   tls-verify: false
