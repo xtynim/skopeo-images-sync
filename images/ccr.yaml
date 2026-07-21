@@ -100,6 +100,7 @@ docker.io:
       - 3206.vb_15dcf73f6a_9-2
     jenkins/jenkins:
       - latest
+      - 2.573-jdk21
       - 2.479.2-jdk17
       - 2.462.3-jdk17
       - 2.452.2-jdk17
@@ -116,6 +117,8 @@ docker.io:
       - RELEASE.2023-12-23T07-19-11Z
     neilpang/acme.sh:
       - latest
+      - 3.1.4
+      - 3.1.2
     obsidiandynamics/kafdrop:
       - 4.0.2
     selectdb/doris.be-ubuntu:
@@ -133,6 +136,7 @@ docker.io:
       - 0.61.0
       - 0.45.0
     witersencom/svnadmin:
+      - 2.5.10
       - 2.5.9
     lmsysorg/sglang:
       - latest
