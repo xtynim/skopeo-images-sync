@@ -12,8 +12,10 @@ docker.io:
       - 2.45.2
       - latest
     bitnami/mysql:
+      - 5.7.44
       - 8.0.26
       - 8.0.39
+      - 8.0.46
     bitnami/redis:
       - 5.0.14
       - 6.2.14
@@ -161,7 +163,7 @@ docker.io:
     witersencom/svnadmin:
       - 2.5.10
       - 2.5.9
-  updated: 2026-05-21T09:41:25Z
+  updated: 2026-07-17T09:18:30Z
 ghcr.io:
   images:
     ggml-org/llama.cpp:
@@ -182,4 +184,12 @@ us-central1-docker.pkg.dev:
       - latest
     keephq/keep/keep-ui:
       - latest
-  updated: 2026-05-21T09:42:26Z
+  updated: 2026-07-17T09:21:18Z
+container-registry.oracle.com:
+  images:
+    mysql/community-server:
+      - 8.0.26
+      - 8.0.46
+      - 8.4.10
+      - 9.7.1
+  updated: 2026-07-17T09:20:09Z
