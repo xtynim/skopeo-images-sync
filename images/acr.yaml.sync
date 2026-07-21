@@ -68,6 +68,7 @@ docker.io:
       - 2.479.2-jdk17
       - 2.541.3-jdk17
       - 2.555.2-jdk21
+      - 2.573-jdk21
       - latest
     lmsysorg/sgl-model-gateway:
       - latest
@@ -97,6 +98,7 @@ docker.io:
     neilpang/acme.sh:
       - 3.1.2
       - 3.1.3
+      - 3.1.4
       - latest
     nginx:
       - 1.22.0
@@ -163,7 +165,7 @@ docker.io:
     witersencom/svnadmin:
       - 2.5.10
       - 2.5.9
-  updated: 2026-07-17T09:18:30Z
+  updated: 2026-07-21T08:31:49Z
 ghcr.io:
   images:
     ggml-org/llama.cpp:
@@ -184,12 +186,13 @@ us-central1-docker.pkg.dev:
       - latest
     keephq/keep/keep-ui:
       - latest
-  updated: 2026-07-17T09:21:18Z
+  updated: 2026-07-21T08:32:52Z
 container-registry.oracle.com:
   images:
     mysql/community-server:
+      - 5.7.44
       - 8.0.26
       - 8.0.46
       - 8.4.10
       - 9.7.1
-  updated: 2026-07-17T09:20:09Z
+  updated: 2026-07-21T08:31:50Z
