@@ -70,6 +70,9 @@ docker.io:
       - 2.555.2-jdk21
       - 2.573-jdk21
       - latest
+    kylemanna/openvpn:
+      - "2.4"
+      - latest
     lmsysorg/sgl-model-gateway:
       - latest
       - v0.3.0
@@ -126,12 +129,24 @@ docker.io:
       - 13.1.2-devel-ubuntu24.04
       - 13.1.2-runtime-rockylinux9
       - 13.1.2-runtime-ubuntu24.04
+    ozon08/openvpn-server:
+      - 0.6.3
+      - latest
+    ozon08/openvpn-ui:
+      - 0.9.7.2
+      - latest
     snowdreamtech/frpc:
       - 0.45.0
       - 0.61.0
+      - 0.69.1
+      - 0.70.0-debian
+      - latest
     snowdreamtech/frps:
       - 0.45.0
       - 0.61.0
+      - 0.69.1
+      - 0.70.0-debian
+      - latest
     sonatype/nexus3:
       - 3.65.0
       - 3.69.0
@@ -165,7 +180,7 @@ docker.io:
     witersencom/svnadmin:
       - 2.5.10
       - 2.5.9
-  updated: 2026-07-21T08:31:49Z
+  updated: 2026-07-23T08:55:38Z
 ghcr.io:
   images:
     ggml-org/llama.cpp:
@@ -186,7 +201,7 @@ us-central1-docker.pkg.dev:
       - latest
     keephq/keep/keep-ui:
       - latest
-  updated: 2026-07-21T08:32:52Z
+  updated: 2026-07-23T08:55:57Z
 container-registry.oracle.com:
   images:
     mysql/community-server:
