@@ -119,6 +119,15 @@ docker.io:
       - latest
       - 3.1.4
       - 3.1.2
+    ozon08/openvpn-server:
+      - latest
+      - 0.6.3
+    ozon08/openvpn-ui:
+      - latest
+      - 0.9.7.2
+    kylemanna/openvpn:
+      - latest
+      - 2.4
     obsidiandynamics/kafdrop:
       - 4.0.2
     selectdb/doris.be-ubuntu:
@@ -130,9 +139,15 @@ docker.io:
       - 3.69.0
       - 3.65.0
     snowdreamtech/frpc:
+      - latest
+      - 0.70.0-debian
+      - 0.69.1
       - 0.61.0
       - 0.45.0
     snowdreamtech/frps:
+      - latest
+      - 0.70.0-debian
+      - 0.69.1
       - 0.61.0
       - 0.45.0
     witersencom/svnadmin:
