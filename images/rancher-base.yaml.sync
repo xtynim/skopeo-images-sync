@@ -152,6 +152,17 @@ docker.io:
     rancher/mirrored-sig-storage-csi-resizer:
       - v1.12.0
     rancher/mirrored-sig-storage-livenessprobe:
+      - '-'
+      - 0.0.14
+      - 'rancher/mirrored-sonobuoy-sonobuoy:'
+      - 'rancher/neuvector-compliance-config:'
+      - 'rancher/neuvector-controller:'
+      - 'rancher/neuvector-enforcer:'
+      - 'rancher/neuvector-manager:'
+      - 'rancher/neuvector-prometheus-exporter:'
+      - 'rancher/neuvector-registry-adapter:'
+      - 'rancher/neuvector-scanner:'
+      - 'rancher/neuvector-updater:'
       - v2.15.0
     rancher/mirrored-sonobuoy-sonobuoy:
       - '-'
@@ -217,4 +228,4 @@ docker.io:
       - v0.27.1
     rancher/ui-plugin-catalog:
       - 4.37.0
-  updated: 2026-09-04T07:52:07Z
+  updated: 2026-09-04T08:05:27Z
