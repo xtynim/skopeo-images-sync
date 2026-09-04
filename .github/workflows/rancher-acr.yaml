@@ -1,6 +1,6 @@
 # 同步镜像到阿里云个人仓库：registry.cn-hangzhou.aliyuncs.com/xtynim
 
-name: Synchronize images - AL.ACR
+name: Synchronize Rancher Images - AL.ACR
 
 on:
   workflow_dispatch:

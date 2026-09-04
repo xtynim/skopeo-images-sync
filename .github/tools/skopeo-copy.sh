@@ -82,7 +82,7 @@ skopeoCopy()
 
     # 若 Tag 包含 latest 则强制同步，否则检查 .sync 文件状态
     if [[ "${TAG}" == *"latest"* ]] || [ ! "$(getSyncStatus ${REGISTRY} ${REPOSITORY} ${TAG})" ]; then
-        echo "+ skopeo copy docker://${REGISTRY}/${REPOSITORY}:${tag} docker://${IMAGES_REPO}/${REPOSITORY}:${TAG}"
+        echo "+ skopeo copy docker://${REGISTRY}/${REPOSITORY}:${tag}"
         if [ "${IMAGES_MULTIPATHS^^}X" == "REPLACEX" ]; then
             echo "  => ${IMAGES_REPO}/${REPOSITORY//\//_}:${TAG}"
             skopeo copy --retry-times 5 docker://${REGISTRY}/${REPOSITORY}:${tag} docker://${IMAGES_REPO}/${REPOSITORY//\//_}:${TAG}
@@ -93,6 +93,7 @@ skopeoCopy()
             echo "  => ${IMAGES_REPO}/${REPOSITORY##*/}:${TAG}-${REPOSITORY%%/*}"
             skopeo copy --retry-times 5 docker://${REGISTRY}/${REPOSITORY}:${tag} docker://${IMAGES_REPO}/${REPOSITORY##*/}:${TAG}-${REPOSITORY%%/*}
         else
+            echo "  => ${IMAGES_REPO}/${REPOSITORY}:${TAG}"
             skopeo copy --retry-times 5 docker://${REGISTRY}/${REPOSITORY}:${tag} docker://${IMAGES_REPO}/${REPOSITORY}:${TAG}
         fi
         updateSyncStatus ${REGISTRY} ${REPOSITORY} ${TAG}
