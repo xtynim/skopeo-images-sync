@@ -8,23 +8,23 @@ docker.io:
     #   - v1.15.1
     # rancher/gke-operator:
     #   - v1.15.1
-    # rancher/appco-alertmanager:
-    #   - 0.30.0-12.16
-    # rancher/appco-grafana:
-    #   - 12.3.1-1.12
-    # rancher/appco-k8s-sidecar:
-    #   - 2.1.2-1.10
-    # rancher/appco-kube-rbac-proxy:
-    #   - 0.20.1-16.14
-    #   - 0.20.1-16.15
-    # rancher/appco-kube-state-metrics:
-    #   - 2.17.0-10.14
-    # rancher/appco-node-exporter:
-    #   - 1.10.2-14.3
-    # rancher/appco-redis:
-    #   - 8.0.3-2.1
-    # rancher/appco-thanos:
-    #   - 0.40.1-8.1
+    rancher/appco-alertmanager:
+      - 0.30.0-12.16
+    rancher/appco-grafana:
+      - 12.3.1-1.12
+    rancher/appco-k8s-sidecar:
+      - 2.1.2-1.10
+    rancher/appco-kube-rbac-proxy:
+      - 0.20.1-16.14
+      - 0.20.1-16.15
+    rancher/appco-kube-state-metrics:
+      - 2.17.0-10.14
+    rancher/appco-node-exporter:
+      - 1.10.2-14.3
+    rancher/appco-redis:
+      - 8.0.3-2.1
+    rancher/appco-thanos:
+      - 0.40.1-8.1
     rancher/backup-restore-operator:
       - v11.0.2
     rancher/cluster-api-controller:
@@ -95,6 +95,7 @@ docker.io:
       - v1.14.5-hardened2
     rancher/local-path-provisioner:
       - v0.0.36
+      - v0.0.37
     rancher/machine:
       - v0.15.0-rancher145.1
     rancher/mirrored-bci-micro:
