@@ -100,7 +100,7 @@ docker.io:
       - 3206.vb_15dcf73f6a_9-2
     jenkins/jenkins:
       - latest
-      - 2.573-jdk21
+      - 2.568.3-jdk21
       - 2.479.2-jdk17
       - 2.462.3-jdk17
       - 2.452.2-jdk17

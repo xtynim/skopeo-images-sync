@@ -84,7 +84,6 @@ docker.io:
     jenkins/jenkins:
       - latest
       - 2.568.3-jdk21
-      - 2.573-jdk21
       - 2.479.2-jdk17
       - 2.462.3-jdk17
       - 2.452.2-jdk17
