@@ -68,8 +68,12 @@ docker.io:
       - 2.479.2-jdk17
       - 2.541.3-jdk17
       - 2.555.2-jdk21
+      - 2.568.3-jdk21
       - 2.573-jdk21
       - latest
+    kiwigrid/k8s-sidecar:
+      - 2.11.2
+      - 2.8.2
     kylemanna/openvpn:
       - "2.4"
       - latest
@@ -180,7 +184,7 @@ docker.io:
     witersencom/svnadmin:
       - 2.5.10
       - 2.5.9
-  updated: 2026-07-23T08:55:38Z
+  updated: 2026-09-22T11:21:48Z
 ghcr.io:
   images:
     ggml-org/llama.cpp:
@@ -201,7 +205,7 @@ us-central1-docker.pkg.dev:
       - latest
     keephq/keep/keep-ui:
       - latest
-  updated: 2026-07-23T08:55:57Z
+  updated: 2026-09-22T11:24:40Z
 container-registry.oracle.com:
   images:
     mysql/community-server:
