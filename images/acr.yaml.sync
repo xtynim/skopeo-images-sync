@@ -144,12 +144,14 @@ docker.io:
       - 0.61.0
       - 0.69.1
       - 0.70.0-debian
+      - 0.72.0-alpine
       - latest
     snowdreamtech/frps:
       - 0.45.0
       - 0.61.0
       - 0.69.1
       - 0.70.0-debian
+      - 0.72.0-alpine
       - latest
     sonatype/nexus3:
       - 3.65.0
@@ -184,7 +186,7 @@ docker.io:
     witersencom/svnadmin:
       - 2.5.10
       - 2.5.9
-  updated: 2026-09-22T11:21:48Z
+  updated: 2026-11-12T10:06:58Z
 ghcr.io:
   images:
     ggml-org/llama.cpp:
@@ -205,7 +207,7 @@ us-central1-docker.pkg.dev:
       - latest
     keephq/keep/keep-ui:
       - latest
-  updated: 2026-09-22T11:24:40Z
+  updated: 2026-11-12T10:08:01Z
 container-registry.oracle.com:
   images:
     mysql/community-server:
