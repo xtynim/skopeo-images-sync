@@ -7,6 +7,17 @@ docker.io:
       - 3.18.6
       - 3.19.0
       - 3.20.0
+      - 3.20.10
+      - 3.21.10
+      - 3.22.8
+      - 3.23.8
+      - 3.24.4
+      - latest
+    alpine/git:
+      - 2.36.2
+      - 2.45.2
+      - 2.47.2
+      - 2.52.0
       - latest
     bitnami/git:
       - 2.45.2
@@ -25,6 +36,9 @@ docker.io:
       - latest
     busybox:
       - "1.28"
+      - 1.36-glibc
+      - 1.36-musl
+      - "1.38"
       - latest
     calciumion/new-api:
       - latest
@@ -34,10 +48,12 @@ docker.io:
       - 17.11.0-ce.0
       - 17.11.7-ce.0
       - 18.10.6-ce.0
+      - 18.11.14-ce.0
     glpi/glpi:
       - 10.0.20
       - 11.0.2
     gogs/gogs:
+      - 0.14.4
       - latest
     golang:
       - 1.16.15
@@ -52,10 +68,22 @@ docker.io:
       - 1.20.14-alpine3.19
       - 1.21.13
       - 1.21.13-alpine3.20
+      - 1.22.12
+      - 1.22.12-alpine3.21
       - 1.22.9
       - 1.22.9-alpine3.20
+      - 1.23.12
+      - 1.23.12-alpine3.22
       - 1.23.3
       - 1.23.3-alpine3.20
+      - 1.24.13
+      - 1.24.13-alpine3.23
+      - 1.25.14
+      - 1.25.14-alpine3.24
+      - 1.26.11
+      - 1.26.11-alpine3.24
+      - 1.27.4
+      - 1.27.4-alpine3.24
     jenkins/inbound-agent:
       - 3206.vb_15dcf73f6a_9-2
       - latest
@@ -70,6 +98,7 @@ docker.io:
       - 2.555.2-jdk21
       - 2.568.3-jdk21
       - 2.573-jdk21
+      - 2.580.2-jdk21
       - latest
     kiwigrid/k8s-sidecar:
       - 2.11.2
@@ -102,23 +131,48 @@ docker.io:
       - 3-eclipse-temurin-17
       - 3-eclipse-temurin-21
       - 3-eclipse-temurin-8
+    mongo:
+      - 4.4.30
+      - 5.0.33
+      - 6.0.28
+      - 7.0.48
+      - 8.0.38
+    mysql:
+      - 5.7.44
+      - 8.0.46
+      - 8.4.13
+      - 9.7.4
     neilpang/acme.sh:
       - 3.1.2
       - 3.1.3
       - 3.1.4
+      - 3.1.6
       - latest
     nginx:
       - 1.22.0
       - 1.24.0
       - 1.26.0
+      - 1.26.3
+      - 1.28.3
+      - 1.30.6
       - latest
     node:
       - 16.13.0
+      - 16.13.2
       - 18.20.3
+      - 18.20.8
       - 20.14.0
       - 20.14.0-alpine
       - 20.15.0
       - 20.15.0-alpine
+      - 20.20.2
+      - 22.23.5
+      - 24.22.3
+      - 24.22.3-alpine
+      - 24.23.5
+      - 24.23.5-alpine
+      - 26.13.1
+      - 26.13.1-alpine
       - latest
     nvidia/cuda:
       - 11.7.1-devel-ubuntu22.04
@@ -138,6 +192,19 @@ docker.io:
       - latest
     ozon08/openvpn-ui:
       - 0.9.7.2
+      - latest
+    redis:
+      - 5.0.14
+      - 6.0.20
+      - 6.2.24
+      - 7.2.17
+      - 7.4.12
+      - 8.10.3
+    rustfs/rc:
+      - latest
+      - v0.1.36
+    rustfs/rustfs:
+      - 1.0.6
       - latest
     snowdreamtech/frpc:
       - 0.45.0
@@ -168,6 +235,8 @@ docker.io:
       - "22.10"
       - "24.04"
       - "24.10"
+      - "26.04"
+      - "26.10"
     vllm/vllm-openai:
       - latest
       - latest-cu129-ubuntu2404
@@ -186,7 +255,7 @@ docker.io:
     witersencom/svnadmin:
       - 2.5.10
       - 2.5.9
-  updated: 2026-11-12T10:06:58Z
+  updated: 2026-11-16T08:20:53Z
 ghcr.io:
   images:
     ggml-org/llama.cpp:
@@ -207,7 +276,7 @@ us-central1-docker.pkg.dev:
       - latest
     keephq/keep/keep-ui:
       - latest
-  updated: 2026-11-12T10:08:01Z
+  updated: 2026-11-16T08:22:00Z
 container-registry.oracle.com:
   images:
     mysql/community-server:
